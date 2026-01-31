@@ -1,7 +1,7 @@
 <?php
 session_start();
-$nav = "division";
-$title = "Division";
+$nav = "multiplication";
+$title = "Multiplication";
 require "header.php";
 include "functions/functionsMath.php";
 
@@ -9,38 +9,29 @@ include "functions/functionsMath.php";
 
 ?>
 
-<h1>Division</h1>
+<h1>Multiplication</h1>
 <?php
-
-//Comme le nombre2 n'est pas encore attribué dans le formulaire, il donne toujours division par O erreur.
-//Donc il faut rajouter un test pour verifier si le formulaire a ete soumis.
-
-//if ($_SERVER['REQUEST_METHOD'] === 'POST'):  //https://www.w3schools.com/php/phptryit.asp?filename=tryphp_global_post
-
 if(isset($_POST['nombre1'], $_POST['nombre2'])):
     if (is_numeric($_POST['nombre1']) && is_numeric($_POST['nombre2'])) :
-
-        if($_POST['nombre2'] != 0):
-
         //creeer un string avec les deux chiffres et le resultat:
 
-        $somme = division($_POST['nombre1'], $_POST['nombre2']);
-        $resultat = $_POST['nombre1'] . " / " . $_POST['nombre2'] . " = " . $somme;
+        $somme = multiplication($_POST['nombre1'], $_POST['nombre2']);
+        $resultat = $_POST['nombre1'] . " * " . $_POST['nombre2'] . " = " . $somme;
 
 
 
         //initialiser la liste si existe pas:
-        if(!isset($_SESSION['listeDivisions'])){
-            $_SESSION['listeDivisions'] = [];
+        if(!isset($_SESSION['listeMultiplications'])){
+            $_SESSION['listeMultiplications'] = [];
         }
         //rajouter le resultat dans la liste, ça sera montré en haut pour
         // montrer la historique. Petit exercice pour prepare le grand travaille.
 
 
-        $_SESSION['listeDivisions'][] = $resultat;
+        $_SESSION['listeMultiplications'][] = $resultat;
         //display all results from the listeAdditions:
 
-        foreach($_SESSION['listeDivisions'] as $resultat){
+        foreach($_SESSION['listeMultiplications'] as $resultat){
             echo $resultat . "<br>";
         }
 
@@ -69,36 +60,25 @@ if(isset($_POST['nombre1'], $_POST['nombre2'])):
         $_SESSION['listeChiffres1'][] = $_POST['nombre1'];
         $_SESSION['listeChiffres2'][] = $_POST['nombre2'];
         $_SESSION['listeResultats'][] = $somme;
-        $_SESSION['listeOperateurs'][] = "/";
+        $_SESSION['listeOperateurs'][] = "*";
 
 
         ?>
 
-
-        <p style = "color:red">Le resultat = <?PHP echo ($_POST['nombre1']/ $_POST['nombre2']) ?></p>
+        <p style = "color:red">Le resultat = <?PHP echo ($_POST['nombre1']* $_POST['nombre2']) ?></p>
 
     <?php else: ?>
-            <h2> Noooooon! Jamais diviser par 0 !!!! </h2>
+        Vous n'avez pas introduit des valeurs numeriques!
     <?php
     endif;
-    endif; //fin du if pour verifier le division par 0
-        else: ?>
-
-            <h2>Vous n'avez pas introduit des valeurs numeriques!</h2>
-<?php
-endif;
-
-//endif; //fin du if pour verifier si le formulaire a ete soumis.
-// Prochaine fois je mets des {} :-(
-    ?>
-<form action="division.php" method="POST">
+endif;?>
+<form action="CDF.php" method="POST">
     <input type="number" name="nombre1" placeholder="Uniquement des chiffres!'">
     <input type="number" name="nombre2" placeholder="Uniquement des chiffres!'">
-    <button type="submit">Division</button>
+    <button type="submit">Multiplication</button>
 </form>
 
 
 <?php
 require "footer.php";
 ?>
-

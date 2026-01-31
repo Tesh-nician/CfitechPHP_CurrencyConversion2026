@@ -50,33 +50,23 @@ require_once "functions/authentification.php";
                 <a class="nav-link" href="session_actuelle.php">Session Actuelle</a>
             </li>
             <li class="dropdown">
-                    <a class="nav-link dropbtn" > Calculations</a>
+                    <a class="nav-link dropbtn" > Conversions</a>
                     <div class="dropdown">
 
                         <div class="dropdown-content">
 
-                            <a class="drop-link" href="addition.php"  >Addition</a>
-                            <a class="drop-link" href="soustraction.php">Soustraction</a>
-                            <a class="drop-link" href="multiplication.php">Multiplication</a>
-                            <a class="drop-link" href="division.php">Division</a>
+                            <a class="drop-link" href="USD.php" >EUR/USD</a>
+                            <a class="drop-link" href="JPY.php">EUR/JPY</a>
+                            <a class="drop-link" href="CDF.php">EUR/CDF</a>
+                            <a class="drop-link" href="CHF.php">EUR/AED</a>
+                            <a class="drop-link" href="CHF.php">EUR/CHF</a>
 
                         </div>
 
                     </div>
 
             </li>
-            <li class="nav-item <?php if($nav === "addition"): ?>active <?php endif ?>">
-                <a class="nav-link" href="addition.php">Addition</a>
-            </li>
-            <li class="nav-item <?php if($nav === "soustraction"): ?>active <?php endif ?>">
-                <a class="nav-link" href="soustraction.php">Soustraction</a>
-            </li>
-            <li class="nav-item <?php if($nav === "multiplication"): ?>active <?php endif ?>">
-                <a class="nav-link" href="multiplication.php">Multiplication</a>
-            </li>
-            <li class="nav-item <?php if($nav === "division"): ?>active <?php endif ?>">
-                <a class="nav-link" href="division.php">Division</a>
-            </li>
+
 
 
 

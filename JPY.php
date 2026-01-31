@@ -1,7 +1,7 @@
 <?php
 session_start();
-$nav = "multiplication";
-$title = "Multiplication";
+$nav = "soustraction";
+$title = "Soustraction";
 require "header.php";
 include "functions/functionsMath.php";
 
@@ -9,29 +9,29 @@ include "functions/functionsMath.php";
 
 ?>
 
-<h1>Multiplication</h1>
+<h1>Soustraction</h1>
 <?php
 if(isset($_POST['nombre1'], $_POST['nombre2'])):
     if (is_numeric($_POST['nombre1']) && is_numeric($_POST['nombre2'])) :
         //creeer un string avec les deux chiffres et le resultat:
 
-        $somme = multiplication($_POST['nombre1'], $_POST['nombre2']);
-        $resultat = $_POST['nombre1'] . " * " . $_POST['nombre2'] . " = " . $somme;
+        $somme = soustraction($_POST['nombre1'], $_POST['nombre2']);
+        $resultat = $_POST['nombre1'] . " - " . $_POST['nombre2'] . " = " . $somme;
 
 
 
         //initialiser la liste si existe pas:
-        if(!isset($_SESSION['listeMultiplications'])){
-            $_SESSION['listeMultiplications'] = [];
+        if(!isset($_SESSION['listeSoustractions'])){
+            $_SESSION['listeSoustractions'] = [];
         }
         //rajouter le resultat dans la liste, ça sera montré en haut pour
         // montrer la historique. Petit exercice pour prepare le grand travaille.
 
 
-        $_SESSION['listeMultiplications'][] = $resultat;
+        $_SESSION['listeSoustractions'][] = $resultat;
         //display all results from the listeAdditions:
 
-        foreach($_SESSION['listeMultiplications'] as $resultat){
+        foreach($_SESSION['listeSoustractions'] as $resultat){
             echo $resultat . "<br>";
         }
 
@@ -60,25 +60,26 @@ if(isset($_POST['nombre1'], $_POST['nombre2'])):
         $_SESSION['listeChiffres1'][] = $_POST['nombre1'];
         $_SESSION['listeChiffres2'][] = $_POST['nombre2'];
         $_SESSION['listeResultats'][] = $somme;
-        $_SESSION['listeOperateurs'][] = "*";
+        $_SESSION['listeOperateurs'][] = "-";
 
 
         ?>
 
-        <p style = "color:red">Le resultat = <?PHP echo ($_POST['nombre1']* $_POST['nombre2']) ?></p>
+        <p style = "color:red">Le resultat = <?PHP echo ($_POST['nombre1']-$_POST['nombre2']) ?></p>
 
     <?php else: ?>
         Vous n'avez pas introduit des valeurs numeriques!
     <?php
     endif;
 endif;?>
-<form action="multiplication.php" method="POST">
+<form action="JPY.php" method="POST">
     <input type="number" name="nombre1" placeholder="Uniquement des chiffres!'">
     <input type="number" name="nombre2" placeholder="Uniquement des chiffres!'">
-    <button type="submit">Multiplication</button>
+    <button type="submit">Soustraire</button>
 </form>
 
 
 <?php
 require "footer.php";
 ?>
+

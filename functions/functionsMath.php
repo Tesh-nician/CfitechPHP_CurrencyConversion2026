@@ -1,28 +1,58 @@
 <?php
+session_start();
 
 
 
 
-function addition(float $a,float $b):int{
-    return $a+$b;
+function convertEURtoUSD(float $eur):float{
+    return $eur/$_SESSION['currencyRates']['rates']['EUR'];
 }
 
-function soustraction(float $a,float $b):int{
+function convertUSDtoEUR(float $usd):float{
+    return $usd*$_SESSION['currencyRates']['rates']['EUR'];
+}
 
-    return $a-$b;
+function convertEURtoJPY(float $eur):float{
 
+    $usd = convertEURtoUSD($eur);
+    $jpy = $usd*$_SESSION['currencyRates']['rates']['JPY'];
+    return $jpy;
+}
+
+function convertJPYtoEUR(float $jpy):float{
+    $usd = $jpy*$_SESSION['currencyRates']['rates']['JPY'];
+    $eur = convertUSDtoEUR($usd);
+    return $eur;
+}
+
+function convertEURtoCHF(float $eur):float{
+    $usd = convertEURtoUSD($eur);
+    $chf = $usd*$_SESSION['currencyRates']['rates']['CHF'];
+    return $chf;
+}
+
+function convertCHFtoEUR(float $chf):float{
+    $usd = $chf*$_SESSION['currencyRates']['rates']['CHF'];
+    $eur = convertUSDtoEUR($usd);
+    return $eur;
 }
 
 
-function multiplication(float $a,float $b):int{
-
-    return $a*$b;
+function convertEURtoAED(float $eur):float{
+    $usd = convertEURtoUSD($eur);
+    $aed = $usd*$_SESSION['currencyRates']['rates']['AED'];
+    return $aed;
 }
 
 
-function division(float $a,float $b):float{
-    return $a/$b;
+function convertAEDtoEUR(float $aed):float{
+    $usd = $aed*$_SESSION['currencyRates']['rates']['AED'];
+    $eur = convertUSDtoEUR($usd);
+    return $eur;
 }
+
+
+
 
 //mis en functionsDate.php, tentative solution pour footer qui disparaisse en additions, ...
 //function date_aujourdhui():string{
