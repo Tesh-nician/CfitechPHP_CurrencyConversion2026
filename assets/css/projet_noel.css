@@ -1,0 +1,143 @@
+body{
+
+    margin: 20px;
+    color: white;
+    font-family: "Noto Sans Gothic", sans-serif;
+
+    background-image: url("../images/noel.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+/* Dropdown code from https://www.w3schools.com/howto/howto_css_dropdown_navbar.asp */
+/* https://stackoverflow.com/questions/70712300/dropdown-menu-inside-a-navigation-bar*/
+
+/*begin dropdown*/
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+.dropdown-content {
+
+    display: none;
+    position: absolute;
+    /*top: 20%;*/
+    /*margin-top: 2px;*/
+    /*left: 50px;*/
+
+    background-color: green;
+    color: black;
+    min-width: 140px;
+    /*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
+    z-index: 1;
+}
+
+.dropdown-content a {
+
+    color: black;
+    /*padding: 12px 16px;*/
+    text-decoration: none;
+    display: block;
+    text-align: left;
+
+}
+
+.dropdown-content a:hover {
+    background-color: yellow;
+    color: black;
+    border-radius: 20px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    border-radius: 20px;
+    color: black;
+
+
+}
+
+.dropbtn {
+    /*border-bottom: 3px solid red;*/
+    color: inherit;
+}
+
+.dropbtn::after {
+    /*content: 'v';*/
+    /*color: red;*/
+    /*padding-left: 5px;*/
+}
+
+
+.drop-link{
+    color: black;
+    padding-left: 10px;
+}
+
+
+/*end dropdow */
+
+
+
+
+.footer-container{
+
+/*position close to the bottom of the window*/
+   margin-top: 30%;
+    background-color: black;
+    opacity: 0.8;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+
+a{
+
+    color: red;
+}
+
+
+a:hover{
+    color: orangered;
+}
+.box-row{
+
+    color: red;
+    font-size: large;
+
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+    justify-content: center;
+
+}
+
+.bottom-item{
+    color: red;
+    font-size: large;
+    padding-bottom: 1%;
+
+}
+
+.bottom-item2{
+    /*psosition below the footer*/
+    text-align: center;
+    justify-content: center;
+
+
+    color: gold;
+    font-size: small;
+    padding-bottom: 1%;
+
+
+}
+
+
