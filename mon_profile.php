@@ -23,7 +23,7 @@ if(!is_connected()){
 
 
 
-<h2>Historique de vos calculs</h2>
+<h2>Historique de vos onversions</h2>
 
 
 <?php
