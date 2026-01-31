@@ -3,12 +3,13 @@
 $title = "Mon Profile";
 $nav = "mon_profile";
 //require "functions/authentification.php"; //maintenant dans header.php
+session_start();
 require "header.php";
 
-session_start();
+
 //session_unset();
 
-;
+
 
 if(!is_connected()){
     //Verification si pas connecté => login
@@ -23,10 +24,66 @@ if(!is_connected()){
 
 
 
-<h2>Historique de vos onversions</h2>
+<h2>Historique de vos Conversions</h2>
 
 
 <?php
+
+
+//if $_SESSION['currencyRates] is not empty, get the list of currency rates from the API and store in  session variable:
+
+if (empty($_SESSION['currencyRates'])) {
+
+    $_SESSION['currencyRates'] = file_get_contents("https://openexchangerates.org/api/latest.json?app_id=fdc59c41cdb04e6e908bb996153cc925");
+    $_SESSION['currencyRates'] = json_decode($_SESSION['currencyRates'], true);
+
+    var_dump($_SESSION['currencyRates']);
+
+    echo "<br>New JSON currency list loaded: <br>";
+
+    foreach ($_SESSION['currencyRates']['rates'] as $key => $value) {
+        echo $key . " = " . $value . "<br>";
+    }
+    echo "<br>End of foreach <br> ";
+
+}
+
+
+
+
+//$url = 'https://openexchangerates.org/api/latest.json?app_id=YOUR_APP_ID&base=EUR';
+//
+//$raw = file_get_contents($url);
+//
+//var_dump($raw);
+//echo '<br>';
+//
+//if ($raw === false) {
+//    $e = error_get_last();
+//    var_dump($e);
+//    exit;
+//}
+//
+//if ($raw === false) {
+//    echo 'HTTP fetch failed (file_get_contents returned false).<br>';
+//    exit;
+//}
+//
+//$data = json_decode($raw, true);
+//
+//var_dump($data);
+//echo '<br>json_last_error_msg(): ' . json_last_error_msg() . '<br>';
+//
+//if (!is_array($data) || empty($data['rates'])) {
+//    echo 'No rates found. The API likely returned an error payload or different structure.<br>';
+//    exit;
+//}
+//
+//foreach ($data['rates'] as $k => $v) {
+//    echo $k . ' = ' . $v . '<br>';
+//}
+
+
 //display the session lists listeChiffres1, listeChiffres2, listeResultats, listeOperateurs:
 
 if (!empty($_SESSION['listeChiffres1'])): ?>

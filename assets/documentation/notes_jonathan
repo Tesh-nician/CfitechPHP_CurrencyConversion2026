@@ -1,0 +1,79 @@
+file:///home/jondev/Downloads/eurofxref-daily.xml
+
+https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml
+
+https://openexchangerates.org/
+
+https://stackoverflow.com/questions/50691463/is-there-any-better-way-to-get-currency-exchange-rate-in-php
+
+https://stackoverflow.com/questions/1706042/how-to-parse-xml-file-in-php
+
+SimpleXML
+
+dollar = USD
+Yen = JPY
+pounds = GBP
+FrancsRDC = CDF
+Dirham = AED
+francs suisse = CHF
+
+
+
+https://openexchangerates.org/signup/free
+
+s"vL3mVE>&X:sLY
+
+fdc59c41cdb04e6e908bb996153cc925
+fdc59c41cdb04e6e908bb996153cc925
+
+https://docs.openexchangerates.org/reference/api-introduction
+
+
+https://openexchangerates.org/api/latest.json
+                                             ?app_id=YOUR_APP_ID
+                                             &base=GBP
+
+
+{
+    disclaimer: "https://openexchangerates.org/terms/",
+    license: "https://openexchangerates.org/license/",
+    timestamp: 1449877801,
+    base: "USD",
+    rates: {
+        AED: 3.672538,
+        AFN: 66.809999,
+        ALL: 125.716501,
+        AMD: 484.902502,
+        ANG: 1.788575,
+        AOA: 135.295998,
+        ARS: 9.750101,
+        AUD: 1.390866,
+        /* ... */
+    }
+}
+
+
+
+
+https://www.php.net/manual/en/curl.examples-basic.php
+
+
+https://stackoverflow.com/questions/2138527/php-curl-and-http-post-example
+
+https://stackoverflow.com/questions/14899037/executing-curl-with-php
+
+
+
+
+
+<?php
+        $content = file_get_contents("https://code.directadvert.ru/show.cgi?adp=5357330&json=22");
+        $content = utf8_encode($content);
+        $result = json_decode($content, true);
+        $url = $new['target_url'];
+
+        foreach($result['news'] as $new) {
+            echo $new['target_url'];
+        }
+?>
+
