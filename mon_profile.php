@@ -71,7 +71,7 @@ if (!empty($_SESSION['listeConversions'])): ?>
     <table style="width:100%; text-align:center;  background-color: ivory; color: black;">
         <thead>
         <tr style="background-color: sandybrown;">
-            <th>Source</th>
+            <th>Montant</th>
             <th>Type de conversion</th>
             <th>Resultat</th>
             <th>Date du conversion</th>

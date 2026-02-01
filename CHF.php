@@ -43,7 +43,7 @@ if(isset($_POST['nombre1'])):
 
         //ajouter cette nouvelle conversion dans la liste:
 
-        $_SESSION['listeConversions'][] = new Conversion($_POST['nombre1'], "EUR => USD", $result );
+        $_SESSION['listeConversions'][] = new Conversion($_POST['nombre1'], "EUR=>CHF", $result );
 
 
         ?>

@@ -43,7 +43,7 @@ if(isset($_POST['nombre1'])):
 
         //ajouter cette nouvelle conversion dans la liste:
 
-        $_SESSION['listeConversions'][] = new Conversion($_POST['nombre1'], "EUR => JPY", $result );
+        $_SESSION['listeConversions'][] = new Conversion($_POST['nombre1'], "EUR=>JPY", $result );
 
 
         ?>
@@ -90,7 +90,7 @@ if(isset($_POST['nombre2'])):
 
         //ajouter cette nouvelle conversion dans la liste:
 
-        $_SESSION['listeConversions'][] = new Conversion($_POST['nombre2'], "JPY => EUR", $result2 );
+        $_SESSION['listeConversions'][] = new Conversion($_POST['nombre2'], "JPY=>EUR", $result2 );
 
 
 
