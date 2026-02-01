@@ -10,7 +10,7 @@ session_start();
 //Ceci obliqe les naifs de partager leur emails, mwahaha.
 if (empty($_SESSION['currencyRates'])) {
 
-    echo "<br><h2>Currency list is not loaded: you must first login!!! <br></h2>>";
+    echo "<br><h2>Currency list is not loaded: you must first login!!! <br></h2>";
 }
 
 
@@ -43,7 +43,7 @@ if(isset($_POST['nombre1'])):
 
         //ajouter cette nouvelle conversion dans la liste:
 
-        $_SESSION['listeConversions'][] = new Conversion($_POST['nombre1'], "EUR => USD", $result );
+        $_SESSION['listeConversions'][] = new Conversion($_POST['nombre1'], "EUR=>AED", $result );
 
 
         ?>
@@ -70,11 +70,11 @@ endif;?>
 <br><br>
 <h1 style="text-align: center">Conversion entre AED et EUR</h1>
 <?php
-if(isset($_POST['nombre1'])):
-    if (is_numeric($_POST['nombre1'])) :
+if(isset($_POST['nombre2'])):
+    if (is_numeric($_POST['nombre2'])) :
         //convertir le chiffre de AED en EUR:
 
-        $result = convertAEDtoEUR($_POST['nombre1']);
+        $result2 = convertAEDtoEUR($_POST['nombre2']);
 
         //initialiser la liste si existe pas:
         if(!isset($_SESSION['listeAdditions'])){
@@ -90,7 +90,7 @@ if(isset($_POST['nombre1'])):
 
         //ajouter cette nouvelle conversion dans la liste:
 
-        $_SESSION['listeConversions'][] = new Conversion($_POST['nombre1'], "EUR => USD", $result );
+        $_SESSION['listeConversions'][] = new Conversion($_POST['nombre2'], "AED=>EUR", $result2 );
 
 
 
@@ -107,11 +107,11 @@ endif;?>
 <form action="AED.php" method="POST" style="display: flex; flex-direction:row; justify-content: center;">
 
 
-    <input type="number" name="nombre1" placeholder="AED">
+    <input type="number" name="nombre2" placeholder="AED">
 
     <button type="submit">Convertir AED => EUR</button>
     <div style="min-width: 180px; padding: 10px 12px; border: 2px solid grey; color: black; background-color: white">
-        <?php echo isset($result)? $result." EUR":'0 EUR'; ?>
+        <?php echo isset($result2)? $result2." EUR":'0 EUR'; ?>
     </div>
 
 </form>
