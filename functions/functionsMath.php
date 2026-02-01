@@ -25,6 +25,21 @@ function convertJPYtoEUR(float $jpy):float{
     return $eur;
 }
 
+
+
+function convertEURtoCDF(float $eur):float{
+    $usd = convertEURtoUSD($eur);
+    $cdf = $usd*$_SESSION['currencyRates']['rates']['CDF'];
+    return $cdf;
+}
+
+
+function convertCDFtoEUR(float $cdf):float{
+    $usd = $cdf*$_SESSION['currencyRates']['rates']['CDF'];
+    $eur = convertUSDtoEUR($usd);
+    return $eur;
+}
+
 function convertEURtoCHF(float $eur):float{
     $usd = convertEURtoUSD($eur);
     $chf = $usd*$_SESSION['currencyRates']['rates']['CHF'];

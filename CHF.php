@@ -1,104 +1,121 @@
 <?php
-session_start();
-$nav = "division";
-$title = "Division";
+$nav = "chf";
+$title = "CHF";
 require "header.php";
 include "functions/functionsMath.php";
+include "assets/model/Conversion.php";
+session_start();
 
+//Normalement ceci est chargé aprés login dans mon_profile.php.
+//Ceci obliqe les naifs de partager leur emails, mwahaha.
+if (empty($_SESSION['currencyRates'])) {
+
+    echo "<br><h2>Currency list is not loaded: you must first login!!! <br></h2>>";
+}
 
 
 ?>
 
-<h1>Division</h1>
+<!--Formulaire 1-->
+
+<h1 style="text-align: center">Conversion entre EUR et CHF</h1>
 <?php
+if(isset($_POST['nombre1'])):
+    if (is_numeric($_POST['nombre1'])) :
+        //convertir le chiffre de EUR en CHF:
 
-//Comme le nombre2 n'est pas encore attribué dans le formulaire, il donne toujours division par O erreur.
-//Donc il faut rajouter un test pour verifier si le formulaire a ete soumis.
-
-//if ($_SERVER['REQUEST_METHOD'] === 'POST'):  //https://www.w3schools.com/php/phptryit.asp?filename=tryphp_global_post
-
-if(isset($_POST['nombre1'], $_POST['nombre2'])):
-    if (is_numeric($_POST['nombre1']) && is_numeric($_POST['nombre2'])) :
-
-        if($_POST['nombre2'] != 0):
-
-        //creeer un string avec les deux chiffres et le resultat:
-
-        $somme = division($_POST['nombre1'], $_POST['nombre2']);
-        $resultat = $_POST['nombre1'] . " / " . $_POST['nombre2'] . " = " . $somme;
-
-
+        $result = convertEURtoCHF($_POST['nombre1']);
 
         //initialiser la liste si existe pas:
-        if(!isset($_SESSION['listeDivisions'])){
-            $_SESSION['listeDivisions'] = [];
-        }
-        //rajouter le resultat dans la liste, ça sera montré en haut pour
-        // montrer la historique. Petit exercice pour prepare le grand travaille.
-
-
-        $_SESSION['listeDivisions'][] = $resultat;
-        //display all results from the listeAdditions:
-
-        foreach($_SESSION['listeDivisions'] as $resultat){
-            echo $resultat . "<br>";
+        if(!isset($_SESSION['listeAdditions'])){
+            $_SESSION['listeAdditions'] = [];
         }
 
 
-        //rajouter les chiffres, le resultat et l'operateur dans des tableaux
 
-        //initialiser les listes si ils n'existe pas:
-        if(!isset($_SESSION['listeChiffres1'])){
-            $_SESSION['listeChiffres1'] = [];
+        //rajouter le source, le resultat et le pays dans le tableau de tous les conversions
+
+        //initialiser la liste des conversions s'il n'existe pas:
+        if(!isset($_SESSION['listeConversions'])){
+            $_SESSION['listeConversions'] = [];
         }
 
-        if(!isset($_SESSION['listeChiffres2'])){
-            $_SESSION['listeChiffres2'] = [];
-        }
 
-        if(!isset($_SESSION['listeResultats'])){
-            $_SESSION['listeResultats'] = [];
-        }
+        //ajouter cette nouvelle conversion dans la liste:
 
-        if (!isset($_SESSION['listeOperateurs'])){
-            $_SESSION['listeOperateurs'] = [];
-        }
-
-        //ajouter les valeurs dans les listes:
-
-        $_SESSION['listeChiffres1'][] = $_POST['nombre1'];
-        $_SESSION['listeChiffres2'][] = $_POST['nombre2'];
-        $_SESSION['listeResultats'][] = $somme;
-        $_SESSION['listeOperateurs'][] = "/";
+        $_SESSION['listeConversions'][] = new Conversion($_POST['nombre1'], "EUR => USD", $result );
 
 
         ?>
 
 
-        <p style = "color:red">Le resultat = <?PHP echo ($_POST['nombre1']/ $_POST['nombre2']) ?></p>
 
     <?php else: ?>
-            <h2> Noooooon! Jamais diviser par 0 !!!! </h2>
+        Vous n'avez pas introduit une valeur numerique!
     <?php
     endif;
-    endif; //fin du if pour verifier le division par 0
-        else: ?>
+endif;?>
+<form action="CHF.php" method="POST" style="display: flex; flex-direction:row; justify-content: center;">
 
-            <h2>Vous n'avez pas introduit des valeurs numeriques!</h2>
-<?php
-endif;
+    <input type="number" name="nombre1" placeholder="EUR">
 
-//endif; //fin du if pour verifier si le formulaire a ete soumis.
-// Prochaine fois je mets des {} :-(
-    ?>
-<form action="CHF.php" method="POST">
-    <input type="number" name="nombre1" placeholder="Uniquement des chiffres!'">
-    <input type="number" name="nombre2" placeholder="Uniquement des chiffres!'">
-    <button type="submit">Division</button>
+    <button type="submit">Convertir EUR => CHF</button>
+    <div style="min-width: 180px; padding: 10px 12px; border: 2px solid grey; color: black; background-color: white">
+        <?php echo $result." CHF" ?>
+    </div>
+
 </form>
 
+<!--Formulaire 2-->
+<br><br>
+<h1 style="text-align: center">Conversion entre CHF et EU</h1>
+<?php
+if(isset($_POST['nombre1'])):
+    if (is_numeric($_POST['nombre1'])) :
+        //convertir le chiffre de CHF en EUR:
+
+        $result = convertCHFtoEUR($_POST['nombre1']);
+
+        //initialiser la liste si existe pas:
+        if(!isset($_SESSION['listeAdditions'])){
+            $_SESSION['listeAdditions'] = [];
+        }
+        //rajouter le source, le resultat et le pays dans le tableau de tous les conversions
+
+        //initialiser la liste des conversions s'il n'existe pas:
+        if(!isset($_SESSION['listeConversions'])){
+            $_SESSION['listeConversions'] = [];
+        }
+
+
+        //ajouter cette nouvelle conversion dans la liste:
+
+        $_SESSION['listeConversions'][] = new Conversion($_POST['nombre1'], "EUR => USD", $result );
+
+
+
+
+        ?>
+
+
+
+    <?php else: ?>
+        Vous n'avez pas introduit une valeur numerique!
+    <?php
+    endif;
+endif;?>
+<form action="CHF.php" method="POST" style="display: flex; flex-direction:row; justify-content: center;">
+
+
+    <input type="number" name="nombre1" placeholder="CHF">
+
+    <button type="submit">Convertir CHF => EUR</button>
+    <div style="min-width: 180px; padding: 10px 12px; border: 2px solid grey; color: black; background-color: white">
+        <?php echo isset($result)? $result." EUR":'0 EUR'; ?>
+    </div>
+
+</form>
 
 <?php
 require "footer.php";
 ?>
-

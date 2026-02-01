@@ -1,7 +1,9 @@
 <?php
 session_start();
-unset($_SESSION['pseudo']);
-unset($_SESSION['email']);
+//unset($_SESSION['pseudo']);
+//unset($_SESSION['email']);
+unset($_SESSION['connected']);
+//unset($_SESSION['listeConversions']);
 
 
 

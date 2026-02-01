@@ -1,6 +1,6 @@
 <?php
-$nav = "usd";
-$title = "USD";
+$nav = "aed";
+$title = "AED";
 require "header.php";
 include "functions/functionsMath.php";
 include "assets/model/Conversion.php";
@@ -10,7 +10,7 @@ session_start();
 //Ceci obliqe les naifs de partager leur emails, mwahaha.
 if (empty($_SESSION['currencyRates'])) {
 
-echo "<br><h2>Currency list is not loaded: you must first login!!! <br></h2>>";
+    echo "<br><h2>Currency list is not loaded: you must first login!!! <br></h2>>";
 }
 
 
@@ -18,22 +18,22 @@ echo "<br><h2>Currency list is not loaded: you must first login!!! <br></h2>>";
 
 <!--Formulaire 1-->
 
-<h1 style="text-align: center">Conversion entre EUR et USD</h1>
+<h1 style="text-align: center">Conversion entre EUR et AED</h1>
 <?php
 if(isset($_POST['nombre1'])):
     if (is_numeric($_POST['nombre1'])) :
         //convertir le chiffre de EUR en USD:
 
-        $result = convertEURtoUSD($_POST['nombre1']);
+        $result = convertEURtoAED($_POST['nombre1']);
 
         //initialiser la liste si existe pas:
-    if(!isset($_SESSION['listeAdditions'])){
-        $_SESSION['listeAdditions'] = [];
-    }
+        if(!isset($_SESSION['listeAdditions'])){
+            $_SESSION['listeAdditions'] = [];
+        }
 
 
 
-    //rajouter le source, le resultat et le pays dans le tableau de tous les conversions
+        //rajouter le source, le resultat et le pays dans le tableau de tous les conversions
 
         //initialiser la liste des conversions s'il n'existe pas:
         if(!isset($_SESSION['listeConversions'])){
@@ -46,35 +46,35 @@ if(isset($_POST['nombre1'])):
         $_SESSION['listeConversions'][] = new Conversion($_POST['nombre1'], "EUR => USD", $result );
 
 
-    ?>
+        ?>
 
 
 
     <?php else: ?>
         Vous n'avez pas introduit une valeur numerique!
     <?php
-        endif;
-    endif;?>
-    <form action="USD.php" method="POST" style="display: flex; flex-direction:row; justify-content: center;">
+    endif;
+endif;?>
+<form action="AED.php" method="POST" style="display: flex; flex-direction:row; justify-content: center;">
 
-        <input type="number" name="nombre1" placeholder="EUR">
+    <input type="number" name="nombre1" placeholder="EUR">
 
-        <button type="submit">Convertir EUR => USD</button>
-        <div style="min-width: 180px; padding: 10px 12px; border: 2px solid grey; color: black; background-color: white">
-            <?php echo $result." USD" ?>
-        </div>
+    <button type="submit">Convertir EUR => AED</button>
+    <div style="min-width: 180px; padding: 10px 12px; border: 2px solid grey; color: black; background-color: white">
+        <?php echo $result." AED" ?>
+    </div>
 
-    </form>
+</form>
 
 <!--Formulaire 2-->
- <br><br>
-<h1 style="text-align: center">Conversion entre USD et EU</h1>
+<br><br>
+<h1 style="text-align: center">Conversion entre AED et EUR</h1>
 <?php
 if(isset($_POST['nombre1'])):
     if (is_numeric($_POST['nombre1'])) :
-        //convertir le chiffre de USD en EUR:
+        //convertir le chiffre de AED en EUR:
 
-        $result = convertUSDtoEUR($_POST['nombre1']);
+        $result = convertAEDtoEUR($_POST['nombre1']);
 
         //initialiser la liste si existe pas:
         if(!isset($_SESSION['listeAdditions'])){
@@ -104,12 +104,12 @@ if(isset($_POST['nombre1'])):
     <?php
     endif;
 endif;?>
-<form action="USD.php" method="POST" style="display: flex; flex-direction:row; justify-content: center;">
+<form action="AED.php" method="POST" style="display: flex; flex-direction:row; justify-content: center;">
 
 
-    <input type="number" name="nombre1" placeholder="USD">
+    <input type="number" name="nombre1" placeholder="AED">
 
-    <button type="submit">Convertir USD => EUR</button>
+    <button type="submit">Convertir AED => EUR</button>
     <div style="min-width: 180px; padding: 10px 12px; border: 2px solid grey; color: black; background-color: white">
         <?php echo isset($result)? $result." EUR":'0 EUR'; ?>
     </div>
@@ -119,3 +119,4 @@ endif;?>
 <?php
 require "footer.php";
 ?>
+

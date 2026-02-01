@@ -58,7 +58,7 @@ require_once "functions/authentification.php";
                             <a class="drop-link" href="USD.php" >EUR/USD</a>
                             <a class="drop-link" href="JPY.php">EUR/JPY</a>
                             <a class="drop-link" href="CDF.php">EUR/CDF</a>
-                            <a class="drop-link" href="CHF.php">EUR/AED</a>
+                            <a class="drop-link" href="AED.php">EUR/AED</a>
                             <a class="drop-link" href="CHF.php">EUR/CHF</a>
 
                         </div>
