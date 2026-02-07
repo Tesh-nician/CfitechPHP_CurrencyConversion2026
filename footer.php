@@ -3,7 +3,7 @@ include "functions/functionsDate.php";
 ?>
 
 
-<div class="footer-container">
+<div class="footer-container" >
     <div class="box-row">
 
             <div class="bottom-item"><a href="./index"> Home</a></div>

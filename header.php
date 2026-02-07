@@ -4,6 +4,10 @@
 <?PHP
 require_once "functions/authentification.php";
 
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 ?>
 
 <head>
@@ -36,10 +40,10 @@ require_once "functions/authentification.php";
 </head>
 
 <body>
-<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+<nav class="navbar navbar-expand-md  bg-dark mb-4" style="border-radius: 10px;color: gold; opacity:0.8">
 
 
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav mr-auto" >
             <li class="nav-item <?php if($nav === "index"): ?>active <?php endif ?>">
                 <a class="nav-link" href="index.php">Acceuil <span class="sr-only">(current)</span></a>
             </li>
@@ -49,7 +53,10 @@ require_once "functions/authentification.php";
             <li class="nav-item <?php if($nav === "session_actuelle"): ?>active <?php endif ?>">
                 <a class="nav-link" href="session_actuelle.php">Session Actuelle</a>
             </li>
-            <li class="dropdown">
+            <li class="nav-item <?php if($nav === "pagesurprise"): ?>active <?php endif ?>">
+                <a class="nav-link" href="session_actuelle.php">Page Surprise</a>
+            </li>
+            <li class="dropdown"  >
                     <a class="nav-link dropbtn" > Conversions</a>
                     <div class="dropdown">
 
@@ -80,12 +87,17 @@ require_once "functions/authentification.php";
         </ul>
 
         <ul class="navbar-nav">
+
+            <?php if(!($_SESSION['connected'])): ?>
             <li class="nav-item <?php if ($nav === "login"): ?> active <?php endif ?>">
                 <a class="nav-link" href="login.php">Login</a>
             </li>
+
+            <?php else: ?>
             <li class="nav-item">
                 <a class="nav-link" href="logout.php">Logout</a>
             </li>
+            <?php endif; ?>
         </ul>
 
 

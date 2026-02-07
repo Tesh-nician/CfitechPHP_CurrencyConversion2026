@@ -23,9 +23,9 @@ require "header.php";
             Membres du projet: </p>
         <p>
             <ul>
-            <li>Paul</li>
-            <li>Said</li>
-            <li>Jonathan</li>
+            <li>Jonathan ( frontend/backend )</li>
+            <li>Jonathan (design graphique)</li>
+            <li>Jonathan( gestion de projet)</li>
         </ul>
 
 
