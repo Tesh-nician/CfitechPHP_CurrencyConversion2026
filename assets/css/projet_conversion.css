@@ -16,67 +16,35 @@ body{
 
 /*begin dropdown*/
 
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown:hover {
-    color: red;
-}
 
 
-.dropdown-content {
-
-    display: none;
-    position: absolute;
-    /*top: 20%;*/
-    /*margin-top: 2px;*/
-    /*left: 50px;*/
 
 
-    background-color: black;
-    min-width: 140px;
 
-    z-index: 1;
-}
 
-.dropdown-content a {
-    color: goldenrod;
-    border-radius: 10px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
 
-.dropdown-content a:hover {
+
+
+.dropdown-menu a:hover {
     background-color: yellow;
     color: black;
 
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
+.dropdown-item {
+
+    color: yellow;
+}
+
+.dropdown-item:hover  {
     border-radius: 20px;
-    color: black;
-}
-
-.dropbtn {
-    /*border-bottom: 3px solid red;*/
-    color: inherit;
-}
-
-.dropbtn::after {
-    /*content: 'v';*/
-    /*color: red;*/
-    /*padding-left: 5px;*/
 }
 
 
-.drop-link{
-    color: black;
-    padding-left: 10px;
-}
+
+
+
+
 
 
 /*end dropdow */

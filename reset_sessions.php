@@ -2,6 +2,7 @@
 
 session_start();
 session_destroy();
+$nav = "reset_sessions.php";
 
 
 require "header.php";

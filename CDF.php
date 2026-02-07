@@ -1,5 +1,5 @@
 <?php
-$nav = "cdf";
+$nav = "cdf.php";
 $title = "CDF";
 require "header.php";
 include "functions/functionsMath.php";

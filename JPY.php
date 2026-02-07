@@ -1,5 +1,5 @@
 <?php
-$nav = "jpy";
+$nav = "jpy.php";
 $title = "JPY";
 require "header.php";
 include "functions/functionsMath.php";

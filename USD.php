@@ -1,5 +1,5 @@
 <?php
-$nav = "usd";
+$nav = "usd.php";
 $title = "USD";
 require "header.php";
 include "functions/functionsMath.php";

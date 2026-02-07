@@ -1,5 +1,5 @@
 <?php
-$nav = "aed";
+$nav = "aed.php";
 $title = "AED";
 require "header.php";
 include "functions/functionsMath.php";

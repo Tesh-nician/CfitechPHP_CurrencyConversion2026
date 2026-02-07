@@ -1,5 +1,5 @@
 <?php
-$nav = "chf";
+$nav = "chf.php";
 $title = "CHF";
 require "header.php";
 include "functions/functionsMath.php";
