@@ -57,7 +57,7 @@ if(isset($_POST['nombre1'])):
 endif;?>
 <form action="AED.php" method="POST" style="display: flex; flex-direction:row; justify-content: center;">
 
-    <input type="number" name="nombre1" placeholder="EUR">
+    <input type="number" step="0.01" name="nombre1" placeholder="EUR">
 
     <button type="submit">Convertir EUR => AED</button>
     <div style="min-width: 180px; padding: 10px 12px; border: 2px solid grey; color: black; background-color: white">
@@ -107,7 +107,7 @@ endif;?>
 <form action="AED.php" method="POST" style="display: flex; flex-direction:row; justify-content: center;">
 
 
-    <input type="number" name="nombre2" placeholder="AED">
+    <input type="number" step="0.01"  name="nombre2" placeholder="AED">
 
     <button type="submit">Convertir AED => EUR</button>
     <div style="min-width: 180px; padding: 10px 12px; border: 2px solid grey; color: black; background-color: white">

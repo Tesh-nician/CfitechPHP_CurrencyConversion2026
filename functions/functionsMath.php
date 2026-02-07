@@ -20,7 +20,7 @@ function convertEURtoJPY(float $eur):float{
 }
 
 function convertJPYtoEUR(float $jpy):float{
-    $usd = $jpy*$_SESSION['currencyRates']['rates']['JPY'];
+    $usd = $jpy/$_SESSION['currencyRates']['rates']['JPY'];
     $eur = convertUSDtoEUR($usd);
     return $eur;
 }
@@ -35,7 +35,7 @@ function convertEURtoCDF(float $eur):float{
 
 
 function convertCDFtoEUR(float $cdf):float{
-    $usd = $cdf*$_SESSION['currencyRates']['rates']['CDF'];
+    $usd = $cdf/$_SESSION['currencyRates']['rates']['CDF'];
     $eur = convertUSDtoEUR($usd);
     return $eur;
 }
@@ -47,7 +47,7 @@ function convertEURtoCHF(float $eur):float{
 }
 
 function convertCHFtoEUR(float $chf):float{
-    $usd = $chf*$_SESSION['currencyRates']['rates']['CHF'];
+    $usd = $chf/$_SESSION['currencyRates']['rates']['CHF'];
     $eur = convertUSDtoEUR($usd);
     return $eur;
 }
@@ -61,7 +61,7 @@ function convertEURtoAED(float $eur):float{
 
 
 function convertAEDtoEUR(float $aed):float{
-    $usd = $aed*$_SESSION['currencyRates']['rates']['AED'];
+    $usd = $aed/$_SESSION['currencyRates']['rates']['AED'];
     $eur = convertUSDtoEUR($usd);
     return $eur;
 }
