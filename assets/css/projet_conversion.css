@@ -41,7 +41,13 @@ body{
 }
 
 
-
+.carousel-container{
+    margin-top: 2%;
+    margin-left: 30%;
+    margin-right-30%;
+    height: 50%;
+    width: 40%;
+}
 
 
 
