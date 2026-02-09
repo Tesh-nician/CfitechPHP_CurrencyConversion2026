@@ -2,8 +2,11 @@
 <html lang="en">
 
 <?PHP
-require_once "functions/authentification.php";
+require_once __DIR__ . "/functions/authentification.php";
 
+require_once __DIR__ . "/assets/model/Conversion.php";
+//IMPORTANTE: la classe Conversion dois être chargé AVANT la session si c'est utilisé dans pour stocker des variables.
+//AUSSI IMPORTANT: require_once sinon si déja loadé, le deuxiéme tentative va causer un problem.
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }

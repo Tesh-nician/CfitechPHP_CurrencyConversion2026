@@ -10,6 +10,23 @@ body{
 
 }
 
+
+.page1-membres-container{
+
+    margin-top: 10%;
+    margin-left: 20%;
+    margin-right: 20%;
+    border-radius: 10px;
+    background-color: goldenrod;
+    opacity: 0.5;
+    color: darkviolet;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: xx-large;
+    padding: 2%
+
+}
 /* Dropdown code from :*/
 /* https://stackoverflow.com/questions/70712300/dropdown-menu-inside-a-navigation-bar
 /* Hint: le secret c'est display:none => :hover display:block' */

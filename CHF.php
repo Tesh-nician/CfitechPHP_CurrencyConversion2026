@@ -3,7 +3,7 @@ $nav = "chf.php";
 $title = "CHF";
 require "header.php";
 include "functions/functionsMath.php";
-include "assets/model/Conversion.php";
+//include "assets/model/Conversion.php";//Déjà dans le header
 session_start();
 
 //Normalement ceci est chargé aprés login dans mon_profile.php.

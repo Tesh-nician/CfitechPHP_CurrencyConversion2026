@@ -18,15 +18,21 @@ require "header.php";
 <main role="main" class="container">
 
     <div class="starter-template">
-        <h1>Projet de Groupe PHP Conversion 2026</h1>
-        <p class="subtitle">
-            Membres du projet: </p>
-        <p>
-            <ul>
-            <li>Jonathan ( frontend/backend )</li>
-            <li>Jonathan (design graphique)</li>
-            <li>Jonathan( gestion de projet)</li>
-        </ul>
+
+        <div class="page1-membres-container">
+            <h1 style="text-align: center"><p>Projet de Groupe <br> PHP Conversion 2026 </p> </h1>
+            <h2>Membres du projet:     </h2>
+            <ol>
+
+                <li>Jonathan( gestion de projet)</li>
+                <li>Jonathan ( frontend/backend )</li>
+                <li>Jonathan (design graphique)</li>
+
+            </ol>
+
+        </div>
+
+
 
 
 

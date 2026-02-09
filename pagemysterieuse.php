@@ -17,17 +17,17 @@ require "header.php";
 <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner" >
 
-        <div class="carousel-item active" data-bs-interval="3000"><div class="carrousel-image">
+        <div class="carousel-item active" data-bs-interval="5000"><div class="carrousel-image">
                 <img src="/assets/images/nessie.webp" class="d-block w-100" alt="..." style="border-radius: 20px;"> <h1 style="text-align: center; padding-top: 1%"> Un tronc d'arbre!</h1></div>
         </div>
-        <div class="carousel-item " data-bs-interval="3000"><div class="carrousel-image">
+        <div class="carousel-item " data-bs-interval="5000"><div class="carrousel-image">
                 <img src="/assets/images/flatearth.webp" class="d-block w-100" alt="..." style="border-radius: 20px;"><h1 style="text-align: center; padding-top: 1%"> Des gens qui sonts plates!</h1></div>
         </div>
-        <div class="carousel-item " data-bs-interval="3000"><div class="carrousel-image">
+        <div class="carousel-item " data-bs-interval="5000"><div class="carrousel-image">
                 <img src="/assets/images/covidconspiracy.jpg" class="d-block w-100" alt="..." style="border-radius: 20px;"><h1 style="text-align: center; padding-top: 1%"> Est-ce que les forêts Flamands contient-ils des virus encore inconnus??</h1></div>
         </div>
         <div class="carousel-item " data-bs-interval="3000"><div class="carrousel-image">
-                <img src="/assets/images/brigittemacron.jpg" class="d-block w-100" alt="..." style="border-radius: 20px;"><h1 style="text-align: center; padding-top: 1%"> Miss World 2026??</h1></div>
+                <img src="/assets/images/brigittemacron.jpg" class="d-block w-100" alt="..." style="border-radius: 20px;"><h1 style="text-align: center; padding-top: 1%"> Un homme Miss World 2026??</h1></div>
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">

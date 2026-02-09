@@ -6,8 +6,8 @@ $nav = "mon_profile";
 
 require "header.php";
 include "appToken.php";
-include "assets/model/Conversion.php";
-session_start();
+
+//session_start();//session déjà starté dans le header
 
 //session_unset();
 
