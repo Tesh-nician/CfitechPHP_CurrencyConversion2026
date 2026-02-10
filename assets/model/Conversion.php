@@ -1,6 +1,7 @@
 <?php
 
  class Conversion {
+     //utilisé dans un liste de conversions, affiché dans ma page de profil.
 
     private float $source; //montant a convertir
     private string $pays; // de quelles pays en quelle pays
