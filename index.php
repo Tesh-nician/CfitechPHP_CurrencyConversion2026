@@ -26,36 +26,55 @@ require "header.php";
             <div class="page1-card-container">
 
                 <div class="page1-card">
-                    <h2> Project Manager</h2>
+
+                    <div class="page1-card-text">
+                        <h2> Project Manager</h2>
+                        <p style="font-size: medium">  (moi)</p>
+                    </div>
+
                     <div class="page1-card-image">
-                        <img src="assets/img/jonathan1.jpg" alt="jonathan">
+                        <img src="/assets/images/jonathan3.jpg" alt="jonathan" style="width: 100%">
                     </div>
-
-                    <p></p>
-
-                </div>
-
-                <div class="page1-card">
-                    <h2> Backend+Frontend Developer</h2>
-                    <div class="page1-card-image">
-                        <img src="assets/img/jonathan2.jpg" alt="jonathan">
-                    </div>
-
-
-                </div>
-
-
-                <div class="page1-card">
-                    <h2> Graphic Designer (quelle design?) </h2>
-
-                    < <div class="page1-card-image">
-                        <img src="assets/img/jonathan2.jpg" alt="jonathan">
-                    </div>
-
                 </div>
 
 
             </div>
+
+            <div class="page1-card-container">
+
+                <div class="page1-card">
+
+                    <div class="page1-card-text">
+                        <h2> Graphic Design </h2><br> <p style="font-size: medium">  (inspiré par les rideaux et coussins de ma femme)</p>
+                    </div>
+
+                    <div class="page1-card-image">
+                        <img src="/assets/images/curtains.jpeg" alt="jonathan" style="width: 100%">
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="page1-card-container">
+
+                <div class="page1-card">
+
+                    <div class="page1-card-text">
+                        <h2> Frontend/backend</h2>
+                        <p style="font-size: medium">  (moi)</p>
+                    </div>
+
+                    <div class="page1-card-image">
+                        <img src="/assets/images/jonathan1.png" alt="jonathan" style="width: 100%">
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
 
             <h2>Objectifs du projét: </h2>
 
@@ -75,7 +94,7 @@ require "header.php";
 
 
 
-        </p>
+
 
     </div>
 

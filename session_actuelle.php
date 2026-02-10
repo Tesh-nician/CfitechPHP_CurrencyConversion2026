@@ -1,12 +1,12 @@
 
 <?php
 
-session_start();
+
 $nav= "session_actuelle.php";
 require "header.php";
+session_start();
 
-
-
+echo "<h1>Liste de tous les variables des session</h1>";
 
 var_dump( $_SESSION);
 //xdebug_var_dump($_SESSION);
@@ -20,13 +20,7 @@ highlight_string("<?php\n\$data =\n" . var_export($_SESSION, true) . ";\n?>");
 
 //print_r($_SESSION);
 
-?>
 
-<h1>Tous les variables des session</h1>
-
-
-
-<?php
 
 require "footer.php";
 

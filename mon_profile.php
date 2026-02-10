@@ -20,9 +20,25 @@ if(!is_connected()){
 }
 
 ?>
-<h1>Bienvenue <?php
-    echo $_SESSION['pseudo']; ?> </h1>
+<h1 style="font-style: oblique">PROFILE  </h1>
 <br>
+<div class="page1-card-container">
+
+    <div class="page1-card">
+
+        <div class="page1-card-text">
+            <h1> <?php
+                echo $_SESSION['user']['firstname']." ".$_SESSION['user']['lastname']; ?></h1>
+            <p style="font-size: medium">  (moi)</p>
+        </div>
+
+        <div class="page1-card-image">
+            <img src="/assets/images/jonathan1.png" alt="jonathan" style="width: 50%; border-radius: 50%;">
+        </div>
+    </div>
+
+
+</div>
 
 <?php
 
@@ -51,7 +67,7 @@ if (empty($_SESSION['currencyRates'])) {
 
 
 
-
+<br><br>
 <h2>Historique de vos Conversions</h2>
 
 

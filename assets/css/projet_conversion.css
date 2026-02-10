@@ -5,28 +5,66 @@ body{
     font-family: "Noto Sans Gothic", sans-serif;
 
     background-image: url("../images/background-2.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-size: contain;
+    background-repeat: repeat;
 
 }
 
 
 .page1-membres-container{
-
+    z-index: -5;
     margin-top: 10%;
     margin-left: 20%;
     margin-right: 20%;
     border-radius: 10px;
-    background-color: goldenrod;
-    opacity: 0.5;
+    background-color: darkblue;
+    opacity: 0.9;
     color: darkviolet;
     display: flex;
     flex-direction: column;
     justify-content: center;
     font-size: xx-large;
+    width: 60%;
     padding: 2%
-
 }
+
+.page1-card-container{
+
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+
+
+.page1-card{
+
+    margin-top: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 10px;
+    background-color: black;
+    color: darkviolet;
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+}
+
+.page1-card-text{
+    flex:1;
+    text-align: right;
+    /*width: 30%;*/
+}
+
+.page1-card-image{
+
+    flex:2;
+    /*width: 70%;*/
+}
+
+
+
 /* Dropdown code from :*/
 /* https://stackoverflow.com/questions/70712300/dropdown-menu-inside-a-navigation-bar
 /* Hint: le secret c'est display:none => :hover display:block' */
@@ -43,11 +81,12 @@ body{
 
 
 .dropdown-menu a:hover {
-    background-color: yellow;
+    /*background-color: yellow;*/
     background-image: url("../images/background.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
     color: black;
+    z-index: 5;
 
 }
 
@@ -85,7 +124,7 @@ body{
     margin-right: 30%;
     border-radius: 10px;
 
-    background-color: black;
+    background-color: darkblue;
     opacity: 0.5;
     color: white;
     display: flex;
@@ -96,7 +135,7 @@ body{
 
 
 a{
-    color: gold;
+    color: white;
 }
 
 
@@ -122,7 +161,7 @@ a:hover{
     /*psosition below the footer*/
     text-align: center;
     justify-content: center;
-    color: gold;
+    color: white;
     font-size: small;
     padding-bottom: 1%;
 }

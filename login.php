@@ -4,13 +4,7 @@ $title = "Login";
 $erreur = null;
 session_start();
 
-// //solution 1
-// session_start();
-// if(isset($_SESSION['connected']) && $_SESSION['connected']){
-//     header("Location: ./dashboard.php");
-// }
 
-//solution 2
 require "./functions/authentification.php";
 if (is_connected()){
     header("Location: mon_profile.php");
@@ -25,6 +19,9 @@ if (!empty($_POST['pseudo']) && !empty($_POST['password'])){
         $_SESSION['connected'] = true;
         $_SESSION['pseudo'] = $_POST['pseudo'];
         $_SESSION['password'] = $_POST['password'];
+        $_SESSION['user']= [
+                'firstname'=>'Jonathan',
+                'lastname'=>'Deroo'];
         header("Location: mon_profile.php");
         exit;
 
